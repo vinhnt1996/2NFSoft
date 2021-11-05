@@ -15,7 +15,7 @@ class PostController extends Controller
     }
 
     public function index() {
-        return response()->json(['data'=> $this->postService->index()]);
+        return response()->json($this->postService->index());
         // $this->postService->index();
 
         // return response()->json(Post::all());
