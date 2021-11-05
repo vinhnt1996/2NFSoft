@@ -15,7 +15,7 @@ class PostController extends Controller
     }
 
     public function index() {
-        return response()->json($this->postService->index());
+        return response()->json(['data'=> $this->postService->index()]);
         // $this->postService->index();
 
         // return response()->json(Post::all());
@@ -39,7 +39,7 @@ class PostController extends Controller
     }
 
     public function edit(Request $request, $id) {
-        return $this->postService->edit($request, $id);
+        return response()->json($this->postService->edit($request, $id));
         // $post = Post::find($id);
         // $post->title = $request->title;
         // $post->content = $request->content;
